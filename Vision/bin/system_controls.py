@@ -1,5 +1,10 @@
 import os
 import pyttsx3 as spk
-os.system("shutdown /s")
+import sys
+
+cmd = sys.argv[1]
+if cmd=="shutdown":
+	os.system(cmd + " /s")
 #reboot
-os.system("shutdown /r")
+elif cmd=="restart" or "reboot":
+	os.system("shutdown /r")

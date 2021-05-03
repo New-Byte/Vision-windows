@@ -2,15 +2,9 @@ import os
 import sys
 import pyttsx3 as spk
 import speech_recognition as sr
-from word2number import w2n
+import search_any as sa
 
-def get_index(inst):
-	return w2n.word_to_num(inst)
-
-def open_file(inpt):
-	os.popen('start /wait "{pth}"'.format(pth=y[inpt]))
-
-def get_response():
+def get_response(y):
 	spk.speak("Which file shall i open for you sir ?")
 	r = sr.Recognizer()
 	mic = sr.Microphone()
@@ -22,25 +16,14 @@ def get_response():
 		spk.speak("Good bye sir...")
 		exit()
 	else:
-		num = get_index(inst)
+		ind = inst.index("number")
+		num = sa.get_index(inst[ind + 7:])
 		spk.speak("Opening file number " + str(num))
-		open_file(num)
-
-def search_any_file(filename):
-	pths=''
-	print(filename)
-	print('Searching File....')
-	pth=os.popen("wmic logicaldisk get caption").read()
-	disks = pth.split("\n\n")
-	for y in range(1,len(disks)):
-		disks[y]=disks[y].strip()
-		pths+=os.popen("dir "+disks[y]+"\\"+filename+".* /b/s").read()
-	paths = pths.split("\n")
-	return paths
+		os.popen("start /wait {pth}".format(pth=y[num-1]))
 
 file ='"'+sys.argv[1]+'"'
 
-y=search_any_file(file)
+y=sa.search_any_file(file)
 
 spk.speak("I found the following files for you...")
 print("List of files")
@@ -51,6 +34,6 @@ print("---" * 35)
 
 while True:
 	try:
-		get_response()
+		get_response(y)
 	except:
 		spk.speak("I can not understand what you are saying...")

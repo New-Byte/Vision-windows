@@ -13,7 +13,7 @@ import random as rd
 #random quote generating function
 def qg():
     global j
-    ind=rd.randint(0,50)
+    ind=rd.randint(0,90)
     print(ind)
     d=[j[ind]]
     d=d[0].split(" ")

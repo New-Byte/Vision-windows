@@ -5,6 +5,7 @@ import speech_recognition as sr
 from word2number import w2n 
 import vlc
 import pafy
+import webbrowser as wb
 
 def get_results(show,lim):
 	results = []
@@ -91,8 +92,8 @@ def play_video(x):
 		pass
 
 def visit_playlist(x):
-	spk.speak("Use browser to visit playlist")
-	spk.speak("Work to be done by shyam")
+	spk.speak("Opening playlist")
+	wb.open(x['channel_link'])
 
 
 show = sys.argv[1]

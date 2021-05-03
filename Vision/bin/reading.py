@@ -1,6 +1,9 @@
+import pyttsx3
+import PyPDF2
+from search_any import search_any_file
+import sys
+
 def read(filename, pageno):
-    import pyttsx3
-    import PyPDF2
     book = open(filename, 'rb')
     pdfReader = PyPDF2.PdfFileReader(book)
     pages = pdfReader.numPages
@@ -11,4 +14,8 @@ def read(filename, pageno):
     speaker.say(text)
     speaker.runAndWait()
 
-read("dbms.pdf", 10)
+filename = sys.argv[1]
+pageno = sys.argv[2]
+
+filename = search_any_file(filename)
+read(filename[0], int(pageno)-1)
