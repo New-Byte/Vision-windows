@@ -1,6 +1,6 @@
 import pyttsx3 as spk
 #opening .txt file containing quotes
-f=open("lotus.txt","r")
+f=open("C:\\Vision\\Vision-windows\\Vision\\bin\\lotus.txt","r")
 lof=f.readlines()
 j=[]
 #eliminating break line character "\n"
@@ -33,7 +33,7 @@ def qg():
 from tkinter import*
 root=Tk()
 root.geometry("900x300")
-root.title("Random Quote Generator")
+root.title("Quote Coder")
 root.grid_columnconfigure(0, weight=1)
 root.configure(bg="#b2d6d6")
 #Label bg color selection

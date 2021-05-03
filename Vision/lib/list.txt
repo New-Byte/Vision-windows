@@ -1,0 +1,27 @@
+Vision is AI assistant for Desktop. It provides many features and can be operated using Command line interface as well as Graphical user interface. 
+Syntax:
+vision [option] [list of arguments]
+List of options:
+version		:-		Gives the current version of product.
+--cli		:-		Runs the vision without GUI in the command prompt.
+install 	:-		Installs any package supported by chocolatey.
+uninstall 	:-		Uninstalls already installed package from the system.
+update 		:-		Updates the installed package.
+translate 	:-		Translates given text from one language to another.
+browse		:-		Searches the query using browser.
+quote		:-		Generates a quote from famous people.
+telljoke	:-		Tells the joke for entertainment purpose.
+readpdf		:- 		Reads the pdf file for user.
+searchasset :-		Searches files or directories for user.
+sleep		:-		Shuts down the computer.
+blink		:- 		Reboots the computer.
+refresh		:-		Retrains the vision after updation.
+watch		:-		Shows the desired youtube videos.
+wiki		:-		Searches the query on wikipedia.
+--help 		:-		To help the user for commands.
+Example:
+1. vision install git
+2. vision translate "I love cricket" hi en
+3. vision browse "Taj Mahal"
+4. vision readpdf [name of file] [page number]
+5. vision watch [name of video] [number of searches]

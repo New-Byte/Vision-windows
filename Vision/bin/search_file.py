@@ -25,15 +25,19 @@ file ='"'+sys.argv[1]+'"'
 
 y=sa.search_any_file(file)
 
-spk.speak("I found the following files for you...")
-print("List of files")
-print("---" * 35)
-for z in range(len(y[:-1])):
-	print(z+1," | ",y[z])
-print("---" * 35)
+if len(y) > 1:
+	spk.speak("I found the following files for you...")
+	print("List of files")
+	print("---" * 35)
+	for z in range(len(y[:-1])):
+		print(z+1," | ",y[z])
+	print("---" * 35)
+	while True:
+		try:
+			get_response(y)
+			break
+		except:
+			spk.speak("I can not understand what you are saying...")
 
-while True:
-	try:
-		get_response(y)
-	except:
-		spk.speak("I can not understand what you are saying...")
+else:
+	spk.speak("{file} does not exist in your system.".format(file=file))
