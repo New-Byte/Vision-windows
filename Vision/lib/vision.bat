@@ -5,7 +5,7 @@ set dl=%3
 set sl=%4
 if [%ver%]==[] (python C:\Vision\Vision-windows\Vision\gui\gui_support_python.py) else (
 if "%ver%"=="--cli" (python C:\Vision\Vision-windows\Vision\bin\main.py) else (if "%ver%"=="version" (echo 0.0.5) else (
-if "%ver%"=="install" OR "%ver%"=="uninstall" OR "%ver%"=="update" OR "%ver%"=="info" (python C:\Vision\Vision-windows\Vision\bin\add-remove.py %ver% %app%)
+if "%ver%"=="install" OR "%ver%"=="uninstall" OR "%ver%"=="update" OR "%ver%"=="info" (python C:\Vision\Vision-windows\Vision\bin\add-remove.py %ver% %app%) 
 	) 
 	)
 )
@@ -19,10 +19,7 @@ if "%ver%"=="translate" (translate %app% %dl% %sl%) else (if "%ver%"=="browse" (
 							if "%ver%"=="sleep" (python C:\Vision\Vision-windows\Vision\bin\system_controls.py "restart") else (
 								if "%ver%"=="refresh" (python C:\Vision\Vision-windows\Vision\bin\training_bot.py) else (
 									if "%ver%"=="watch" (python C:\Vision\Vision-windows\Vision\bin\youtube.py %app% %dl%) else (
-										if "%ver%"=="--help" (command_list) else (
-											echo Command is invalid
-
-											)
+										if "%ver%"=="--help" (command_list)
 										)
 									)
 								)
