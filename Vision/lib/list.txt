@@ -2,6 +2,7 @@ Vision is AI assistant for Desktop. It provides many features and can be operate
 Syntax:
 vision [option] [list of arguments]
 List of options:
+init		:-		Sets up the environment for vision.
 version		:-		Gives the current version of product.
 --cli		:-		Runs the vision without GUI in the command prompt.
 install 	:-		Installs any package supported by chocolatey.
@@ -12,7 +13,7 @@ browse		:-		Searches the query using browser.
 quote		:-		Generates a quote from famous people.
 telljoke	:-		Tells the joke for entertainment purpose.
 readpdf		:- 		Reads the pdf file for user.
-searchasset :-		Searches files or directories for user.
+searchasset 	:-		Searches files or directories for user.
 sleep		:-		Shuts down the computer.
 blink		:- 		Reboots the computer.
 refresh		:-		Retrains the vision after updation.
