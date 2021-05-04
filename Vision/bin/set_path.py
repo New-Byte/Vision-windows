@@ -11,7 +11,7 @@ def serach(app):# Function for the seraching app in C drive & adding path in pth
 	except Exception as e:
 		print(e)
 	if pth != "File Not Found":
-		f=open("E:\\pth.txt", 'a')
+		f=open("pth.txt", 'a')
 		f.write('{pth}'.format(pth=pth))
 		f.close()
 		print('100%...')
@@ -21,10 +21,10 @@ def serach(app):# Function for the seraching app in C drive & adding path in pth
 
 def launch(app):#Launching app using path in the pth file
 	try:
-		f=open("E:\\pth.txt","r")
+		f=open("pth.txt","r")
 		l=f.readlines()
 	except:
-		f=open("E:\\pth.txt","w")
+		f=open("pth.txt","w")
 		l=[]
 	pth=None
 	for i in l:
