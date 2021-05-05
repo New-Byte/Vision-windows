@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'abcd.ui'
+# Form implementation generated from reading ui file 'abcd1.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -9,24 +9,25 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+# from PyQt5.QtGui import QMovie
 
 
 class Ui_MainWindow(object):
-    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(805, 597)
+        MainWindow.resize(792, 624)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(-10, 10, 821, 571))
+        self.label.setGeometry(QtCore.QRect(-20, 10, 811, 571))
         self.label.setMaximumSize(QtCore.QSize(16777215, 571))
         self.label.setAutoFillBackground(False)
+        self.label.setStyleSheet("Background-color: rgb(0, 0, 30)")
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap("C:\\Vision\\Vision-windows\\Vision\\gui\\gui1.png"))
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(10, 410, 181, 71))
+        self.pushButton.setGeometry(QtCore.QRect(20, 390, 181, 71))
         self.pushButton.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("C:\\Vision\\Vision-windows\\Vision\\gui\\2button.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -43,7 +44,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setCheckable(True)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(580, 400, 171, 61))
+        self.pushButton_3.setGeometry(QtCore.QRect(570, 400, 171, 61))
         self.pushButton_3.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("C:\\Vision\\Vision-windows\\Vision\\gui\\4BUTTON.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -51,13 +52,48 @@ class Ui_MainWindow(object):
         self.pushButton_3.setIconSize(QtCore.QSize(170, 155))
         self.pushButton_3.setCheckable(True)
         self.pushButton_3.setObjectName("pushButton_3")
+
+
+        # self.Gif_1 = QtWidgets.QLabel(self.centralwidget)
+        self.Gif_1 = QtWidgets.QLabel(self.centralwidget)
+
+        self.Gif_1.setGeometry(QtCore.QRect(570, 450, 221, 111))
+        self.Gif_1.setStyleSheet("border-radius: 600px")
+        self.Gif_1.setText("")
+        self.Gif_1.setPixmap(QtGui.QPixmap("C:\\Vision\\Vision-windows\\Vision\\gui\\listen.gif"))
+        # self.Gif_1.QtGui.QMovie("listen.gif")
+        self.Gif_1.setScaledContents(True)
+        self.Gif_1.setObjectName("Gif_1")
+
+        
+
+        
+
+
+
+
+        self.yd = QtWidgets.QLabel(self.centralwidget)
+        self.yd.setGeometry(QtCore.QRect(540, 10, 221, 61))
+        self.yd.setText("")
+        self.yd.setPixmap(QtGui.QPixmap("C:\\Vision\\Vision-windows\\Vision\\gui\\gggf.jpg"))
+        self.yd.setScaledContents(True)
+        self.yd.setObjectName("yd")
+        self.real_date_time = QtWidgets.QTextBrowser(self.centralwidget)
+        self.real_date_time.setGeometry(QtCore.QRect(555, 20, 221, 61))
+        self.real_date_time.setStyleSheet("background-color: Transparent;\n"
+"border-radius: none;\n"
+"color: rgb(85, 85, 255);")
+        self.real_date_time.setObjectName("real_date_time")
         self.label.raise_()
+        self.Gif_1.raise_()
         self.pushButton_3.raise_()
         self.pushButton_2.raise_()
         self.pushButton.raise_()
+        self.yd.raise_()
+        self.real_date_time.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 805, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 792, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -66,6 +102,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+    
+    
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
