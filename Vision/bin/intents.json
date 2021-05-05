@@ -6,6 +6,11 @@
 			"responses": ["hello sir","hi sir","greetings sir...","Nice to meet you sir"]
 		},
 		{
+			"tag":"features",
+			"patterns":["features","what are your features","tell me about your features","what can you do","what are you capable of doing","what are your characteristics","characterize yourself"],
+			"responses":["I can perform various system task, I can launch any application, I am able to browse internet and explore wikipedia, I am able to talk with you and i can make you laugh, I can quote life and read the books, I can speak various languages, I am able to access your computer and i can control it to some extent, i can stream youtube videos and i can open any file or folder for you and much more"]
+		},
+		{
 			"tag": "Tv/Video",
 			"patterns": ["Do you like to watch tv","do you watch tv","can you watch video","can you show video","do you watch youtube","do you like youtube","vision do you like to watch tv"],
 			"responses": ["Sorry, I do not watch TV..but i can make my peace with youtube for now...","I like youtube better...","Currently i do not have access to TV..but i can show you youtube videos","I can not watch TV...but i can show you youtube videos"]

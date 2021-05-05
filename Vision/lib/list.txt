@@ -3,6 +3,7 @@ Syntax:
 vision [option] [list of arguments]
 List of options:
 init		:-		Sets up the environment for vision.
+checkstat	:-		Checks status of installed packages by init command (verbose)
 version		:-		Gives the current version of product.
 --cli		:-		Runs the vision without GUI in the command prompt.
 install 	:-		Installs any package supported by chocolatey.

@@ -44,6 +44,8 @@ if "%opt%"=="-v" (
 	pip install pafy >> C:\Vision\Vision-windows\Vision\lib\stop.txt
 	echo Installing python-vlc....
 	pip install python-vlc >> C:\Vision\Vision-windows\Vision\lib\stop.txt
+	echo Installing python-docx....
+	pip install python-docx >> C:\Vision\Vision-windows\Vision\lib\stop.txt
 	echo Installing youtube-search-python....
 	pip install youtube-search-python >> C:\Vision\Vision-windows\Vision\lib\stop.txt
 	echo Installing PyQt5....
@@ -75,6 +77,7 @@ if "%opt%"=="-v" (
 	pip install keyboard
 	pip install pafy
 	pip install python-vlc
+	pip install python-docx
 	pip install youtube-search-python
 	pip install PyQt5
 	pip install PyQtWebEngine
