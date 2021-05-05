@@ -9,6 +9,15 @@ import multiprocessing
 import sys
 import chatbot as cb
 import translate
+import subprocess as sb
+
+uname = sb.getoutput("whoami")
+name = uname.split("\\")[-1]
+gen = cb.run(name)
+if gen == "male":
+	salute = "sir"
+else:
+	salute = "madam"
 
 def stop_vision():
 	spk.speak("Terminating...")
@@ -18,11 +27,11 @@ def stop_vision():
 def greet(lang):
 	hour = int(datetime.datetime.now().hour)
 	if hour>=0 and hour<12:
-		spk.speak(translate.translate_text("Good morning Sir...",lang))
+		spk.speak(translate.translate_text("Good morning {salute}...".format(salute=salute),lang))
 	elif hour>=12 and hour<17:
-		spk.speak(translate.translate_text("Good Afternoon sir...",lang))
+		spk.speak(translate.translate_text("Good Afternoon {salute}...".format(salute=salute),lang))
 	else :
-		spk.speak(translate.translate_text("Good Evening Sir ",lang))
+		spk.speak(translate.translate_text("Good Evening {salute}...".format(salute=salute),lang))
 	    		
 def vision_body(name,voice,lang):
 	engine = spk.init()
@@ -31,7 +40,7 @@ def vision_body(name,voice,lang):
 	greet(lang)
 	while 'True':
 		try:
-			spk.speak(translate.translate_text("{name} at your service...What can i do for you sir ?".format(name=name),lang))
+			spk.speak(translate.translate_text("{name} at your service...What can i do for you {salute} ?".format(name=name,salute=salute),lang))
 			r = sr.Recognizer()
 			mic = sr.Microphone()
 			with mic as source:
@@ -39,10 +48,10 @@ def vision_body(name,voice,lang):
 				audio = r.listen(source)
 			inst = r.recognize_google(audio)
 			exit_stat = cb.run(inst)
-			if exit_stat:
+			if exit_stat==1:
 				stop_vision()
 		except:
-			spk.speak(translate.translate_text("Sorry sir, i can not understand what you are saying.",lang))
+			spk.speak(translate.translate_text("Sorry {salute}, i can not understand what you are saying.".format(salute=salute),lang))
 
 voices = [
 "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0",

@@ -6,9 +6,19 @@
 			"responses": ["hello sir","hi sir","greetings sir...","Nice to meet you sir"]
 		},
 		{
-			"tag":"features",
+			"tag": "boys",
+			"patterns" : ["chirag","atharva","anup","aaditya","anubhav","amrit","prasad","mukund","saurabh","sunil","ashwin","ashutosh","bhushan","shyam","aniket","shri","shree","kiran","ramesh","suresh","dutta","digambar","devanshu","devendra","dev","harshal","harshad","devashish","vyankatesh","nilu","akshay","ansh","vaibhav","ram","rajesh","ravindra","ravi","aashish","aakash","mayur","vivek","vinayak","satish","kartik","amar","akbar","salik","anthony","aman","arwind","arvind","bal","bala","baban","chetan","chintaman","chiman","darshan","david","eknath","eklavya","firoz","pankaj","faruk","farukh","vasant","ganesh","saai","sai","ganapati","gajanan","govind","govinda","gopal","harish","hemant","himanshu","hari","hrutik","hritik","hrushikesh","hrishikesh","chaitanya","bhola","daulat","jayesh","jay","jaykumar","jitendra","jugal","kamlesh","kedaar","kedar","kashinath","krishna","krushna","lalit","mahesh","manohar","mohan","mohandaas","dilip","deelip","sushrut","nitin","nayan","om","omkar","prasad","pranav","pratit","pundalik","purushottam","pravin","pranav","rohit","rutik","ritik","rohan","raam","rameshwar","ramchandra","rahul","narayan","narad","sudhir","sumit","swaraj","sudam","pawan","pradeep","pradip","suraj","sharad","shreyas","tanay","tanmay","vishal","virat","viraj","varad","ishwar","mahadev","lakshmikaant","ramu"],
+			"responses" : ["male"]
+		},
+		{
+			"tag": "girls",
+			"patterns" : ["anita","ankita","aasha","ashwini","anuja","amruta","amrita","achal","babita","chanchal","chetana","chetna","chinmai","chinmayee","devyani","devayani","darshana","drishti","devi","ekta","farah","gita","geeta","girana","ganga","himani","harshali","harshada","hemangi","hema","hempushpa","amisha","ishika","ishita","ishwari","irin","jagadamba","jijai","kalyani","kripa","krupa","lalita","leela","laila","lata","madhavi","madhuri","mamata","minakshi","mina","naina","nayana","neera","noora","payoshni","pooja","pallavi","pushpa","priyanka","priya","pankaja","rita","rituja","rutuja","hrituja","saloni","seema","sima","simaran","shikha","prashna","surabhi","manjiri","smita","shaila","shailaja","rekha","chaitali","tanaya","tina","vrishali","vaishali","vrishali","kajal","sharayu","swati","sneha","snehal","shrutika","shruti","srushti","srishti","kiran","komal","zeera"],
+			"responses" : ["female"]
+		},
+		{
+			"tag": "features",
 			"patterns":["features","what are your features","tell me about your features","what can you do","what are you capable of doing","what are your characteristics","characterize yourself"],
-			"responses":["I can perform various system task, I can launch any application, I am able to browse internet and explore wikipedia, I am able to talk with you and i can make you laugh, I can quote life and read the books, I can speak various languages, I am able to access your computer and i can control it to some extent, i can stream youtube videos and i can open any file or folder for you and much more"]
+			"responses":["My name is Vision, I can perform various system task, I can launch any application, I am able to browse internet and explore wikipedia, I am able to talk with you and i can make you laugh, I can quote life and read the books, I can speak various languages, I am able to access your computer and i can control it to some extent, i can stream youtube videos and i can open any file or folder for you and much more"]
 		},
 		{
 			"tag": "Tv/Video",

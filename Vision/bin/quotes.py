@@ -30,7 +30,7 @@ def qg():
 
 #GUI
 #creating the tkinter window to display quotes
-from tkinter import*
+from tkinter import *
 root=Tk()
 root.geometry("900x300")
 root.title("Quote Coder")

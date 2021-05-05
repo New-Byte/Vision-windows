@@ -229,6 +229,10 @@ def run(msg):
 		spk.speak(res)
 		return 1
 
+	elif ints[0]['intent']=="boys" or ints[0]['intent']=="girls":
+		res = get_responses(ints, intents)
+		return res
+
 	elif ints[0]['intent'] == "system":
 		res = get_responses(ints, intents)
 		if "shut" in msg.lower() or "power" in msg.lower():

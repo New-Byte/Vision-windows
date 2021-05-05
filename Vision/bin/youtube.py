@@ -6,6 +6,15 @@ from word2number import w2n
 import vlc
 import pafy
 import webbrowser as wb
+from tkinter import *
+
+def window():
+	root=Tk()
+	root.geometry("100x100")
+	root.title("Vision Player")
+	button=Button(text="Start",command=link,bg="#000",font="Times",fg="White",activebackground="#6b0e63",activeforeground="White")
+	button.grid(row=5,column=5,stick="WE",padx=28,pady=10)
+	root.mainloop()
 
 def get_results(show,lim):
 	results = []
@@ -50,23 +59,45 @@ def get_response(show,lim):
 		except:
 			spk.speak("Sorry sir, I can not understand what you are saying..")
 	return inst
-
-def clean_response(show, lim):
-	response = list(map(str, get_response(show, lim).split(" ")))
-	punctuation = ["?",",",".","/","|",":",";"]
+def clean_title(title):
+	response = list(map(str, title.split(" ")))
+	punctuation = ["?",",",".","/","|",":",";",'`',"'",'"',"'s","'es"]
 	result = [word for word in response if word not in punctuation]
 	final = " ".join(result)
 	return final
+
+def clean_response(show, lim):
+	response = list(map(str, get_response(show, lim).split(" ")))
+	punctuation = ["?",",",".","/","|",":",";","'",'"',"'s"]
+	result = [word for word in response if word not in punctuation]
+	final = " ".join(result)
+	return final
+
+def play_video(x):
+	url = x["link"]
+	video = pafy.new(url)
+	best = video.getbest()
+	media = vlc.MediaPlayer(best.url)
+	dur = media.get_length()
+	media.play()
+	while True:
+		pass
+
+def visit_playlist(x):
+	spk.speak("Opening playlist")
+	wb.open(x['channel_link'])
+
 
 def check_response(show,lim):
 	results = get_results(show,lim)
 	response = clean_response(show,lim)
 	print(response)
+	global x
 	for x in results:
-		title = x["title"].lower()
-		if response.lower()[:15] in title:
+		title = clean_title(x["title"]).lower()
+		if response.lower()[:10] in title:
 			spk.speak("playing " + x["title"])
-			play_video(x)
+			window()
 			return 0
 		elif "playlist" in response.lower():
 			visit_playlist(x)
@@ -76,24 +107,14 @@ def check_response(show,lim):
 				num = w2n.word_to_num(response)
 				if x["ind"] == num:
 					spk.speak("playing " + x["title"])
-					play_video(x)
+					window()
 					return 0
 			except:
 				return 1
 	return 1
 
-def play_video(x):
-	url = x["link"]
-	video = pafy.new(url)
-	best = video.getbest()
-	media = vlc.MediaPlayer(best.url)
-	media.play()
-	while True:
-		pass
-
-def visit_playlist(x):
-	spk.speak("Opening playlist")
-	wb.open(x['channel_link'])
+def link():
+	play_video(x)
 
 
 show = sys.argv[1]

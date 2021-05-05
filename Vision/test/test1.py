@@ -1,35 +1,17 @@
-from youtubesearchpython import VideosSearch
-import sys
-import pyttsx3 as spk
+from tkinter import *
+def play_video(x):
+	print(x)
 
-def get_results(show,lim):
-	results = []
-	videosSearch = VideosSearch(show, limit = int(lim))
-	result = videosSearch.result()['result']
-	for x in result:
-		video = {}
-		video["title"] = x["title"]
-		video["duration"] = x["duration"]
-		video["link"] = x["link"]
-		video["channel_name"] = x["channel"]["name"]
-		video["channel_link"] = x["channel"]["link"]
-		results.append(video)
-		del video
-	return results
+def tkw():
+	global x
+	x = "playing"
+	root=Tk()
+	root.geometry("1200x300")
+	root.title("Vision Player")
+	button=Button(text="Start",command=link,bg="#000",font="Times",fg="White",activebackground="#6b0e63",activeforeground="White")
+	button.grid(row=1,column=0,stick="WE",padx=28,pady=10)
+	root.mainloop()
 
-def show_results(show,lim):
-	results = get_results(show,lim)
-	for x in results:
-		print("Title: ",x["title"])
-		print("Duration: ",x["duration"])
-		print("Video Link: ", x["link"])
-		print("Channel Name: ",x["channel_name"])
-		print("Channel Link: ", x["channel_link"])
-		print("-"*100)
-
-
-show = sys.argv[1]
-lim = sys.argv[2]
-
-spk.speak("Here is  the result of youtube search")
-show_results(show,lim)
+def link():
+	play_video(x)
+tkw()

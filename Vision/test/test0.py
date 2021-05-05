@@ -1,13 +1,8 @@
-import pyttsx3 as spk
-import speech_recognition as sr
+import gender_guesser.detector as gender 
 
-spk.speak("Speak now...")
-r = sr.Recognizer()
-mic = sr.Microphone()
-with mic as source:
-	r.adjust_for_ambient_noise(source)
-	audio = r.listen(source)
-inst = r.recognize_google(audio)
-
-print(inst)
-spk.speak(inst)
+d = gender.Detector()
+print("prasad: ",d.get_gender(u"prasad"))
+print("pooja: ",d.get_gender(u"pooja"))
+print("sharyu: ",d.get_gender(u"sharyu"))
+print("Saurabh: ",d.get_gender(u"Saurabh"))
+print("shri: ",d.get_gender(u"shri"))
