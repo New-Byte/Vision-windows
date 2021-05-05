@@ -173,7 +173,7 @@ def run(msg):
 	elif ints[0]['intent'] == "goodbye":
 		res = get_responses(ints, intents)
 		spk.speak(res)
-		return 0
+		return 1
 
 	elif ints[0]['intent'] == "youtube":
 		res = get_responses(ints, intents)

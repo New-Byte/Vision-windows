@@ -10,6 +10,10 @@ import sys
 import chatbot as cb
 import translate
 
+def stop_vision():
+	spk.speak("Terminating...")
+	os.system("taskkill /F /IM python.exe /T")
+	os.system("taskkill /F /IM cmd.exe")
 
 def greet(lang):
 	hour = int(datetime.datetime.now().hour)
@@ -27,7 +31,7 @@ def vision_body(name,voice,lang):
 	greet(lang)
 	while 'True':
 		try:
-			spk.speak(translate.translate_text("{name}at your service...What can i do for you sir ?".format(name=name),lang))
+			spk.speak(translate.translate_text("{name} at your service...What can i do for you sir ?".format(name=name),lang))
 			r = sr.Recognizer()
 			mic = sr.Microphone()
 			with mic as source:
@@ -36,7 +40,7 @@ def vision_body(name,voice,lang):
 			inst = r.recognize_google(audio)
 			exit_stat = cb.run(inst)
 			if exit_stat:
-				cnt.stop_vision()
+				stop_vision()
 		except:
 			spk.speak(translate.translate_text("Sorry sir, i can not understand what you are saying.",lang))
 
