@@ -20,6 +20,7 @@ blink		:- 		Reboots the computer.
 refresh		:-		Retrains the vision after updation.
 watch		:-		Shows the desired youtube videos.
 wiki		:-		Searches the query on wikipedia.
+plot		:-		used to plot graphs for csv dataset.
 --help 		:-		To help the user for commands.
 Example:
 1. vision install git
@@ -27,3 +28,4 @@ Example:
 3. vision browse "Taj Mahal"
 4. vision readpdf [name of file] [page number]
 5. vision watch [name of video] [number of searches]
+6. vision plot file.csv

@@ -21,7 +21,10 @@ if "%ver%"=="translate" (translate %app% %dl% %sl%) else (if "%ver%"=="browse" (
 									if "%ver%"=="watch" (python C:\Vision\Vision-windows\Vision\bin\youtube.py %app% %dl%) else (
 										if "%ver%"=="--help" (command_list) else (
 											if "%ver%"=="init" (set_env %app%) else (
-												if "%ver%"=="checkstat" (envstat)
+												if "%ver%"=="checkstat" (envstat) else (
+													if "%ver%"=="plot" (python C:\Vision\Vision-windows\Vision\bin\dav.py %app%)
+
+													)
 
 												)
 

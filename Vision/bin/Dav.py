@@ -1,49 +1,27 @@
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import sklearn.preprocessing
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import confusion_matrix
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-def datanalysis(filename):
-    df = pd.read_csv(filename)
+import sys
+import pandas as pd
 
-    feature = list(df.columns)
+#get input
+file = sys.argv[1]
 
-    length = len(feature)
+#load dataset
+dataset = pd.read_csv("C:\\Vision\\Vision-windows\\Vision\\data\\"+file)
 
-    dependent = feature[-1]
+#corr
+mat = dataset.corr()
 
-    plt.figure(figsize = (15,15))
-    for i in enumerate(feature):
-        print(plt.subplot(length, 1, i[0]+1))##
-        print(sns.countplot(i[1], hue = dependent, data = df))##
-        print(plt.xticks(rotation = 45))
-
-    x = df.iloc[:,0:length-2].values
-
-    y = df.iloc[:,length-1].values
-
-    labelencoder_y = LabelEncoder()
-    y = labelencoder_y.fit_transform(y)
-
-    x_train, x_test, y_train, y_test = train_test_split(x,y,test_size = 0.2)
-
-    logmodel = LogisticRegression()
-    logmodel.fit(x_train,y_train)
-
-    y_pred = logmodel.predict(x_test)
-
-    
-    cm = confusion_matrix(y_test, y_pred)
-    print(cm)
-    classifier_knn = KNeighborsClassifier(n_neighbors=5, metric = 'minkowski', p=2)
-    classifier_knn.fit(x_train, y_train)
-
-    y_pred = classifier_knn.predict(x_test)
-    cm = confusion_matrix(y_test, y_pred)
-    print(cm)
-
-datanalysis("iris_data.csv")
+for x in mat:
+    for y in mat:
+        if mat[x][y] > 0.6 and mat[x][y] < 1:
+            sns.catplot(x=x, y=y, kind="bar", data=dataset)
+            plt.show()
+            
+#Plot Graphs
+#sns.relplot(x="total_bill", y="tip", hue="smoker", style="smoker",data=data)
+#sns.relplot(x="total_bill", y="tip", hue="smoker", style="time", data=data)
+#sns.relplot(x=x, y=y, ci=None, kind="line", data=dataset)
+#sns.catplot(x="sex", y="survived", hue="class", kind="bar", data=data)
