@@ -199,6 +199,8 @@ def run(msg):
 				show = msg[msg.index("watch") + 6:]
 			elif "show" in msg:
 				show = msg[msg.index("show") + 5:]
+			elif "play" in msg:
+				show = msg[msg.index("play") + 5:]
 			else:
 				show = msg
 
@@ -232,6 +234,13 @@ def run(msg):
 	elif ints[0]['intent']=="boys" or ints[0]['intent']=="girls":
 		res = get_responses(ints, intents)
 		return res
+
+	elif ints[0]['intent']=="call-names":
+		res = get_responses(ints, intents)
+		spk.speak(res)
+		f = open("C:\\Vision\\Vision-windows\\Vision\\bin\\names.txt",'w')
+		f.write(msg[msg.index("me") + 3:])
+		spk.speak("From now on i will call you " + msg[msg.index("me") + 3:])
 
 	elif ints[0]['intent'] == "system":
 		res = get_responses(ints, intents)

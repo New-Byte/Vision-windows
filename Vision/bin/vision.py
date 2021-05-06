@@ -11,13 +11,19 @@ import chatbot as cb
 import translate
 import subprocess as sb
 
-uname = sb.getoutput("whoami")
-name = uname.split("\\")[-1]
-gen = cb.run(name)
-if gen == "male":
-	salute = "sir"
-else:
-	salute = "madam"
+try:
+	f = open("C:\\Vision\\Vision-windows\\Vision\\bin\\names.txt",'r')
+	name = f.readline()
+	if len(name) != 0:
+		salute = name
+except:
+	uname = sb.getoutput("whoami")
+	name = uname.split("\\")[-1]
+	gen = cb.run(name)
+	if gen == "male":
+		salute = "sir"
+	else:
+		salute = "madam"
 
 def stop_vision():
 	spk.speak("Terminating...")
