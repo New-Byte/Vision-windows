@@ -220,6 +220,9 @@ def run(msg):
 		elif "search" in msg:
 			ind = msg.index("search") + 7
 			query = msg[ind:]
+		elif "google" in msg:
+			ind = msg.index("google") + 7
+			query = msg[ind:]
 		else:
 			query = msg
 
@@ -249,7 +252,7 @@ def run(msg):
 		elif "reboot" in msg.lower() or "restart" in msg.lower():
 			cmd = "restart"
 
-		os.system(res + cmd)
+		os.system(res + " " + cmd)
 		return 0
 
 

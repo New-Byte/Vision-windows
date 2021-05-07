@@ -84,8 +84,8 @@ def Key_Controls():
 	        ans = input("Do you really want to quit ? (yes/no) ")
 	        if 'yes' in ans:
 	        	spk.speak("Terminating....")
-	        	y.terminate()
-	        	sys.exit()
+	        	os.system("taskkill /F /IM python.exe /T")
+	        	os.system("taskkill /F /IM cmd.exe")
 
 	    if keyboard.read_key() == "v":
 	    	y.terminate()

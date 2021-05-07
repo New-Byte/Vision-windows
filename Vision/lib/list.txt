@@ -9,6 +9,7 @@ version		:-		Gives the current version of product.
 install 	:-		Installs any package supported by chocolatey.
 uninstall 	:-		Uninstalls already installed package from the system.
 update 		:-		Updates the installed package.
+info 		:- 		Get information about package.
 translate 	:-		Translates given text from one language to another.
 browse		:-		Searches the query using browser.
 quote		:-		Generates a quote from famous people.
