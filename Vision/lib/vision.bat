@@ -5,7 +5,16 @@ set dl=%3
 set sl=%4
 if [%ver%]==[] (python C:\Vision\Vision-windows\Vision\gui\gui_support_python.py) else (
 if "%ver%"=="--cli" (python C:\Vision\Vision-windows\Vision\bin\main.py) else (if "%ver%"=="version" (echo 0.0.7) else (
-if "%ver%"=="install" OR "%ver%"=="uninstall" OR "%ver%"=="update" OR "%ver%"=="info" (python C:\Vision\Vision-windows\Vision\bin\add-remove.py %ver% %app%) 
+if "%ver%"=="install" (python C:\Vision\Vision-windows\Vision\bin\add-remove.py %ver% %app%) else (
+	if "%ver%"=="uninstall" (python C:\Vision\Vision-windows\Vision\bin\add-remove.py %ver% %app%) else (
+		if "%ver%"=="update" (python C:\Vision\Vision-windows\Vision\bin\add-remove.py %ver% %app%) else (
+			if "%ver%"=="info" (python C:\Vision\Vision-windows\Vision\bin\add-remove.py %ver% %app%)
+
+			)
+
+		) 
+
+	)
 	) 
 	)
 )
